@@ -1,0 +1,182 @@
+{
+  "productionLine": {
+    "id": "line-001",
+    "name": "Assembly Line Alpha",
+    "location": "Factory Floor A",
+    "lastUpdated": "2024-01-15T10:30:00Z"
+  },
+  "machines": [
+    {
+      "id": "machine-001",
+      "name": "Raw Material Feeder",
+      "type": "conveyor",
+      "status": "active",
+      "throughput": 120,
+      "position": [-6, 0, -4],
+      "efficiency": 95.5,
+      "temperature": 45.2,
+      "vibration": 2.1,
+      "lastMaintenance": "2024-01-10T08:00:00Z",
+      "nextMaintenance": "2024-01-20T08:00:00Z",
+      "description": "Primary feeder for raw materials"
+    },
+    {
+      "id": "machine-002",
+      "name": "Pre-Processor A",
+      "type": "processor",
+      "status": "active",
+      "throughput": 115,
+      "position": [-2, 0, -4],
+      "efficiency": 92.0,
+      "temperature": 68.5,
+      "vibration": 3.2,
+      "lastMaintenance": "2024-01-12T14:00:00Z",
+      "nextMaintenance": "2024-01-22T14:00:00Z",
+      "description": "Initial material processing unit"
+    },
+    {
+      "id": "machine-003",
+      "name": "Main Processor",
+      "type": "processor",
+      "status": "active",
+      "throughput": 110,
+      "position": [2, 0, -4],
+      "efficiency": 88.5,
+      "temperature": 82.3,
+      "vibration": 4.5,
+      "lastMaintenance": "2024-01-08T10:00:00Z",
+      "nextMaintenance": "2024-01-18T10:00:00Z",
+      "description": "Core processing unit"
+    },
+    {
+      "id": "machine-004",
+      "name": "Quality Control",
+      "type": "quality",
+      "status": "idle",
+      "throughput": 0,
+      "position": [6, 0, -4],
+      "efficiency": 0,
+      "temperature": 35.0,
+      "vibration": 0.5,
+      "lastMaintenance": "2024-01-14T16:00:00Z",
+      "nextMaintenance": "2024-01-24T16:00:00Z",
+      "description": "Automated quality inspection"
+    },
+    {
+      "id": "machine-005",
+      "name": "Packaging Unit",
+      "type": "packer",
+      "status": "active",
+      "throughput": 105,
+      "position": [6, 0, 0],
+      "efficiency": 90.2,
+      "temperature": 42.1,
+      "vibration": 1.8,
+      "lastMaintenance": "2024-01-11T09:00:00Z",
+      "nextMaintenance": "2024-01-21T09:00:00Z",
+      "description": "Final packaging station"
+    },
+    {
+      "id": "machine-006",
+      "name": "Secondary Feeder",
+      "type": "conveyor",
+      "status": "stopped",
+      "throughput": 0,
+      "position": [-6, 0, 0],
+      "efficiency": 0,
+      "temperature": 25.0,
+      "vibration": 0.0,
+      "lastMaintenance": "2024-01-09T11:00:00Z",
+      "nextMaintenance": "2024-01-19T11:00:00Z",
+      "description": "Backup feeder unit"
+    },
+    {
+      "id": "machine-007",
+      "name": "Auxiliary Processor",
+      "type": "processor",
+      "status": "maintenance",
+      "throughput": 0,
+      "position": [-2, 0, 0],
+      "efficiency": 0,
+      "temperature": 30.0,
+      "vibration": 0.0,
+      "lastMaintenance": "2024-01-15T08:00:00Z",
+      "nextMaintenance": "2024-01-25T08:00:00Z",
+      "description": "Auxiliary processing unit under maintenance"
+    },
+    {
+      "id": "machine-008",
+      "name": "Final Inspection",
+      "type": "quality",
+      "status": "active",
+      "throughput": 100,
+      "position": [2, 0, 0],
+      "efficiency": 94.8,
+      "temperature": 38.5,
+      "vibration": 1.2,
+      "lastMaintenance": "2024-01-13T13:00:00Z",
+      "nextMaintenance": "2024-01-23T13:00:00Z",
+      "description": "Final product inspection"
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-001",
+      "fromMachineId": "machine-001",
+      "toMachineId": "machine-002",
+      "flowRate": 115,
+      "efficiency": 98.5
+    },
+    {
+      "id": "conn-002",
+      "fromMachineId": "machine-002",
+      "toMachineId": "machine-003",
+      "flowRate": 110,
+      "efficiency": 97.2
+    },
+    {
+      "id": "conn-003",
+      "fromMachineId": "machine-003",
+      "toMachineId": "machine-004",
+      "flowRate": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "conn-004",
+      "fromMachineId": "machine-004",
+      "toMachineId": "machine-005",
+      "flowRate": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "conn-005",
+      "fromMachineId": "machine-006",
+      "toMachineId": "machine-007",
+      "flowRate": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "conn-006",
+      "fromMachineId": "machine-007",
+      "toMachineId": "machine-008",
+      "flowRate": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "conn-007",
+      "fromMachineId": "machine-008",
+      "toMachineId": "machine-003",
+      "flowRate": 100,
+      "efficiency": 99.0
+    }
+  ],
+  "metrics": {
+    "totalThroughput": 450,
+    "averageEfficiency": 82.6,
+    "activeMachines": 5,
+    "idleMachines": 1,
+    "stoppedMachines": 1,
+    "maintenanceMachines": 1,
+    "overallEquipmentEffectiveness": 78.5
+  }
+}
