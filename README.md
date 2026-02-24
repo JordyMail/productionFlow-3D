@@ -2,7 +2,8 @@
 
 A 3D isometric dashboard for visualizing and managing production line machines in real-time. Built with React, Three.js, and Tailwind CSS.
 
-![Flow 3D](./docs/screenshot.png)
+<img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/60bedc5b-594e-4e09-be2e-6ee7ed1eeff1" />
+
 
 ## Features
 
